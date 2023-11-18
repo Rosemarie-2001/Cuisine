@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="navbar">
+            <img src="Images/logo2.png" style="background: transparent;" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+
+            
+            <a href="https://fonts.googleapis.com/icon?family=Material+Icons"></a>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h1>Cuisine</h1>
+                <p>Treat yourself !!! <br>Food choices matter because they are the most consistent<br> ethical decision we make throughout our day.</p>
+                
+            </div>
+            <div class="col">
+                    <div class="card card1">
+                        <h5>DESERT</h5>
+                        <p>Anything is good if its desert</p>
+                    </div>
+                    <div class="card card2">
+                        <h5>BREAKFAST</h5>
+                        <p>The day stars with break</p>
+                    </div>
+                    <div class="card card3">
+                        <h5>DINNER</h5>
+                        <p>What's for dinner</p>
+                        
+                    </div>
+                    <div class="card card4">
+                        <h5>CHAMPAGNE</h5>
+                        <p>Find your favorite drinks</p>
+                        
+                    </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<main>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="Images/photo1.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">BUY YOUR FAVORITES</h1>
+                    <p>Having been in restaurant business our job is to serve you a fresh and delicious food that you cannot fint to other restourant<br>
+                        fancy meal with a lower prize serve you happiness and enjoyment. It's a nature of the hospitality that we take care your orders because 
+                        customers is our lifeblood
+                    </p>
+                    <h3>Thank you and enjoy</h3>
+                </div>
+            </div>
+        </div>
+        <a href="about.html"></a>
+    </div>
+</main>
+
+<footer>
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><img src="Images/mail-icon.png">rosemariepanilagao.cpsu@gmail.com</p>
+                    <p><img src="Images/call-icon.png">09619055706</p>
+                    <a href="https://www.facebook.com/profile.php?id=100007208775022&mibextid=PzaGJu"><img src="Images/fb-icon.png"> Rosemarie Panilagao</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <h6 class="sub-title">Report Problem</h6>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p> @ Rose.Restaurant</p>
+        </div>
+        <a href="contact.html"></a>
+    </div>
+
+</footer>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwPXMm7toFgcblmlcKRtzyVD3i_NpImavHU5Wk-TEWsorsi1HhHGAZIoWtYd70-MNVV/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
